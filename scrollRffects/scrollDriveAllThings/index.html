@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       @import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.light.min.css" layer(demo.support);
+
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    box-shadow: none;
+    transform: scale(.8) translateY(15vh);
+  }
+}
+
+@layer demo {
+  .card {
+    @media (prefers-reduced-motion: no-preference) {
+      view-timeline-name: --item-timeline;
+      animation: slide-fade-in both;
+      animation-timeline: --item-timeline;
+      animation-range: contain 0% contain 50%;
+    }
+  }
+}
+
+@layer demo.support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    background: var(--surface-3);
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+    padding-block: 30dvh;
+  }
+  
+  .cards {
+    display: grid;
+    gap: var(--size-3);
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(3, var(--size-content-1));
+    
+    & > .card {
+      background: linear-gradient(#fff, #fff), var(--gradient-10);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      border-radius: var(--radius-3);
+      box-shadow: var(--shadow-3);
+      line-height: 3;
+      padding-top: var(--size-1);
+      font-size: var(--font-size-4);
+      font-weight: var(--font-weight-6);
+      font-family: var(--font-mono);
+      display: grid;
+      place-content: center;
+      
+      &:nth-of-type(4n) {
+        grid-row: span 2;
+        background-image: linear-gradient(#fff, #fff), var(--gradient-3);
+      }
+      
+      &:nth-of-type(7n) {
+        grid-row: span 3;
+        background-image: linear-gradient(#fff, #fff), var(--gradient-5);
+      }
+      
+      &:nth-of-type(5n) {
+        grid-column: span 2;
+        background-image: linear-gradient(#fff, #fff), var(--gradient-18);
+      }
+    }
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="card">html</div>
+        <div class="card">base</div>
+        <div class="card">head</div>
+        <div class="card">link</div>
+        <div class="card">meta</div>
+        <div class="card">script</div>
+        <div class="card">style</div>
+        <div class="card">title</div>
+        <div class="card">body</div>
+        <div class="card">address</div>
+        <div class="card">article</div>
+        <div class="card">aside</div>
+        <div class="card">footer</div>
+        <div class="card">header</div>
+        <div class="card">h1</div>
+        <div class="card">h2</div>
+        <div class="card">h3</div>
+        <div class="card">h4</div>
+        <div class="card">h5</div>
+        <div class="card">h6</div>
+        <div class="card">hgroup</div>
+        <div class="card">main</div>
+        <div class="card">nav</div>
+        <div class="card">section</div>
+        <div class="card">blockquote</div>
+        <div class="card">cite</div>
+        <div class="card">dd</div>
+        <div class="card">dt</div>
+        <div class="card">dl</div>
+        <div class="card">div</div>
+        <div class="card">figcaption</div>
+        <div class="card">figure</div>
+        <div class="card">hr</div>
+        <div class="card">li</div>
+        <div class="card">ol</div>
+        <div class="card">ul</div>
+        <div class="card">menu</div>
+        <div class="card">p</div>
+        <div class="card">pre</div>
+        <div class="card">a</div>
+        <div class="card">abbr</div>
+        <div class="card">b</div>
+        <div class="card">bdi</div>
+        <div class="card">bdo</div>
+        <div class="card">br</div>
+        <div class="card">code</div>
+        <div class="card">data</div>
+        <div class="card">dfn</div>
+        <div class="card">em</div>
+        <div class="card">i</div>
+        <div class="card">kbd</div>
+        <div class="card">mark</div>
+        <div class="card">q</div>
+        <div class="card">rp</div>
+        <div class="card">ruby</div>
+        <div class="card">rt</div>
+        <div class="card">s</div>
+        <div class="card">samp</div>
+        <div class="card">small</div>
+        <div class="card">span</div>
+        <div class="card">strong</div>
+        <div class="card">sub</div>
+        <div class="card">sup</div>
+        <div class="card">time</div>
+        <div class="card">u</div>
+        <div class="card">var</div>
+        <div class="card">wbr</div>
+        <div class="card">area</div>
+        <div class="card">audio</div>
+        <div class="card">img</div>
+        <div class="card">map</div>
+        <div class="card">track</div>
+        <div class="card">video</div>
+        <div class="card">embed</div>
+        <div class="card">iframe</div>
+        <div class="card">object</div>
+        <div class="card">picture</div>
+        <div class="card">source</div>
+        <div class="card">portal</div>
+        <div class="card">svg</div>
+        <div class="card">canvas</div>
+        <div class="card">noscript</div>
+        <div class="card">del</div>
+        <div class="card">ins</div>
+        <div class="card">caption</div>
+        <div class="card">col</div>
+        <div class="card">colgroup</div>
+        <div class="card">table</div>
+        <div class="card">tbody</div>
+        <div class="card">tr</div>
+        <div class="card">td</div>
+        <div class="card">tfoot</div>
+        <div class="card">th</div>
+        <div class="card">thead</div>
+        <div class="card">button</div>
+        <div class="card">datalist</div>
+        <div class="card">option</div>
+        <div class="card">fieldset</div>
+        <div class="card">label</div>
+        <div class="card">form</div>
+        <div class="card">input</div>
+        <div class="card">legend</div>
+        <div class="card">meter</div>
+        <div class="card">optgroup</div>
+        <div class="card">select</div>
+        <div class="card">output</div>
+        <div class="card">progress</div>
+        <div class="card">textarea</div>
+        <div class="card">details</div>
+        <div class="card">summary</div>
+        <div class="card">dialog</div>
+        <div class="card">slot</div>
+        <div class="card">template</div>
+        <div class="card">acronym</div>
+        <div class="card">applet</div>
+        <div class="card">bgsound</div>
+        <div class="card">big</div>
+        <div class="card">blink</div>
+        <div class="card">center</div>
+        <div class="card">dir</div>
+        <div class="card">font</div>
+        <div class="card">frame</div>
+        <div class="card">frameset</div>
+        <div class="card">image</div>
+        <div class="card">keygen</div>
+        <div class="card">marquee</div>
+        <div class="card">menuitem</div>
+        <div class="card">nobr</div>
+        <div class="card">noembed</div>
+        <div class="card">noframes</div>
+        <div class="card">param</div>
+        <div class="card">plaintext</div>
+        <div class="card">rb</div>
+        <div class="card">rtc</div>
+        <div class="card">spacer</div>
+        <div class="card">strike</div>
+        <div class="card">tt</div>
+        <div class="card">xmp</div>
+    </div>
+</body>
+</html>
