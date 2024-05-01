@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            overflow-x: hidden;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            position: relative;
+        }
+
+        .hero {
+            height: 100vh;
+            width: 100vw;
+            background: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1; /* Ensure hero is above content */
+        }
+
+        .hero_content {
+            font-size: 5rem;
+            text-align: center;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2; /* Ensure content is above hero background */
+        }
+
+        .body {
+            position: relative;
+            z-index: 2;
+            background: green;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+<main class="main">
+    <section class="hero">
+        <div class="hero_content">HERO</div>
+    </section>
+    <section class="body"></section>
+</main>
+<script>
+    window.addEventListener('scroll', function() {
+        var scrollTop = window.scrollY;
+        var parallaxValue = scrollTop * 0.3; // Adjust the factor to control the intensity of parallax
+        document.querySelector('.hero_content').style.transform = 'translateY(-' + parallaxValue + 'px)';
+    });
+</script>
+</body>
+</html>

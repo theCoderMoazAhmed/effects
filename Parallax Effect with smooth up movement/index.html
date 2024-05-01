@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <div class="hero_cover"></div>
+            <div class="hero_content">HERO</div>
+        </section>
+        <section class="body">BODY</section>
+        <section class="footer">FOOTER</section>
+    </main>
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollPos = window.scrollY;
+            const heroBg = document.querySelector('.hero');
+            heroBg.style.backgroundPositionY = -scrollPos * 0.3 + 'px'; // Adjust the factor as needed
+        });
+    </script>
+</body>
+</html>
